@@ -1,0 +1,78 @@
+{% extends 'Base_Templates/base_template.html' %}
+
+<style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+{% block title %}Contact Us{% endblock title %}
+
+{% block body %}
+<div class="container-fluid px-0">
+    <img src="https://source.unsplash.com/1NTOQHBRegA" height="600px" width="10px" class="d-block w-100" alt="">
+</div>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-lg-4">
+          <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+          <img src="https://source.unsplash.com/Dkn8-zPIbwo" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Phone Image">
+  <!-- https://source.unsplash.com/Dkn8-zPIbwo -->
+          <h2>Phone No.</h2>
+          <p>+033 4523870912</p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+            <img src="https://source.unsplash.com/TaOGbz_S-Qw" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Mail Image">
+  
+          <h2>Email</h2>
+          <p>support@sww.co.in</p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+            <img src="https://source.unsplash.com/PhYq704ffdA" class="bd-placeholder-img rounded-circle" width="140" height="140" alt="Phone Image">
+  
+          <h2>Address</h2>
+          <p>Salt Lake Electronics Complex, Infinity Benchmark, 18th floor , Plot G-1 , Block EP&GP, Sector V, Kolkata, West Bengal 700091</p>
+          <p><a class="btn btn-secondary" href="https://www.google.com/maps/place/Infinity+Business+Centre/@22.569439,88.433548,15z/data=!4m5!3m4!1s0x0:0xededed652eff83a!8m2!3d22.5693645!4d88.4337092" target="blank">View on map &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div>
+</div>
+
+<div class="container px-5">
+  <h1>Enquiry</h1>
+  <form method="post" action="/contact">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" name="name" class="form-control" id="examplename1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your name with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="something@example.com">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Phone No.(Your 10 digit mobile no. with adding 0 or '+91' in front)</label>
+      <input type="tel" pattern="[0-9]{10}" name="phone" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your phone no. with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <textarea name="message" name="message" id="" cols="100" rows="10" placeholder="Your message here"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body %}
