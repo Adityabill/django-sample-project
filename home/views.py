@@ -27,3 +27,12 @@ def variableProfile(request):
         "name":"Priya",
     }
     return render(request, 'DemoProfile.html', context)
+
+def service_soft_dev(request):
+    return render(request, 'services/software_development.html')
+
+def service_ml(request):
+    return render(request, 'services/machine_learning.html')
+
+def service_cloud_serv(request):
+    return render(request, 'services/cloud_services.html')
